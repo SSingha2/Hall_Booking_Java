@@ -1,0 +1,24 @@
+<div class="bg">
+    <div style="margin-top: 10px;" class="child" *ngFor="let hall of halls">
+        <div nz-col nzSpan="8">
+            <img class="profile" [src]="updateImg(hall.returnedImg)" style="height: 130px; width: 200px; border-radius: 10px;">
+        </div>
+        <div nz-col nzSpan="16">
+            <h2>
+                {{hall.hallName}}
+            </h2>
+            <hr>
+            <h5>
+                Price: <b>{{hall.price}}</b>
+            </h5>
+            <h5>
+                Description: <b>{{hall.description}}</b>
+            </h5>
+            <hr>
+            <div style="float: right;">
+                <button nzSize="small" nz-button nzType="primary" routerLink="/company/update/{{hall.id}}" >Update</button>
+                <button (click)="deleteHall(hall.id)" style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

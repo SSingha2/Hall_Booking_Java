@@ -1,0 +1,31 @@
+<form nz-form [formGroup]="validateForm" (submit)="searchHallByName()"
+style="margin-top: 20px; margin-bottom: 20px; text-align: center;">
+    <input nz-input placeholder="Enter hall name to search" nzSize="large" style="width: 20%" 
+    formControlName="name">
+
+    <button nz-button nzSize="large" nzType="primary" style="margin-left: 15px;" [disabled]="validateForm.invalid">Search</button>
+</form>
+
+<div class="bg">
+    <div style="margin-top: 10px;" class="child" *ngFor="let hall of halls">
+        <div nz-col nzSpan="8">
+            <img class="profile" [src]="updateImg(hall.returnedImg)" style="height: 130px; width: 200px; border-radius: 10px;">
+        </div>
+        <div nz-col nzSpan="16">
+            <h2>
+                {{hall.hallName}}
+            </h2>
+            <hr>
+            <h5>
+                Price: <b>{{hall.price}}</b>
+            </h5>
+            <h5>
+                Description: <b>{{hall.description}}</b>
+            </h5>
+            <hr>
+            <div style="float: right;">
+                <button nzSize="small" nz-button nzType="primary" routerLink="/client/hall/{{hall.id}}">View</button>
+            </div>
+        </div>
+    </div>
+</div>

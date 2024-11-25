@@ -1,0 +1,59 @@
+<div class="bg" *ngIf="hall">
+  <div class="hall-details-container">
+    <!-- Hall Details Section -->
+    <div class="top-section">
+      <div class="hall-detail">
+        <div class="hall-info-row">
+          <!-- Profile Image -->
+          <div class="profile-container">
+            <img class="profile" [src]="avatarUrl" alt="Hall Image" />
+          </div>
+
+          <!-- Hall Information -->
+          <div class="details-container">
+            <h2 class="hall-name">{{ hall.hallName }}</h2>
+            <p class="hall-price">Price: <span>{{ hall.price }}</span></p>
+            <p class="company-name">Company: <span>{{ hall.companyName }}</span></p>
+            <p class="hall-description">Description: <span>{{ hall.description }}</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Section -->
+      <div class="book-hall">
+        <h3>Book Hall</h3>
+        <form nz-form [formGroup]="validateForm">
+          <div class="form-item">
+            <nz-form-item>
+              <nz-form-label [nzSpan]="24" nzFor="bookDate">Date of Booking</nz-form-label>
+              <nz-form-control [nzSpan]="24">
+                <nz-date-picker formControlName="bookDate" name="bookDate" id="bookDate"></nz-date-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <button nz-button [nzType]="'primary'" [disabled]="validateForm.invalid" (click)="bookHall()">
+            Book
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+      <h3>Reviews</h3>
+      <div class="review-card" *ngFor="let review of reviews">
+        <nz-card [nzBordered]="true" nzTitle="{{ review.clientName }}">
+          <div class="review-content">
+            <p>
+              Rating:
+              <nz-rate disabled [ngModel]="review.rating"></nz-rate>
+            </p>
+            <p>Review: {{ review.review }}</p>
+            <p class="review-date">Posted on: {{ review.reviewDate | date : 'dd/MM/yyyy' }}</p>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+  </div>
+</div>

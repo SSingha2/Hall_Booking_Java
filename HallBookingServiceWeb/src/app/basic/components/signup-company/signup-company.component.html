@@ -1,0 +1,70 @@
+<div class="bg">
+    <div class="parent">
+      <div class="child">
+        <div nz-col>
+          <h1 class="form-header">Company Signup</h1>
+        </div>
+  
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="signup-form">
+          <!-- Email Field -->
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The input is not a valid Email">
+              <nz-input-group nzPrefixIcon="mail">
+                <input nz-input placeholder="Email" formControlName="email" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Password Field -->
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The input is not a valid password">
+              <nz-input-group nzPrefixIcon="lock">
+                <input nz-input type="password" placeholder="Password" formControlName="password" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Confirm Password Field -->
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The passwords do not match">
+              <nz-input-group nzPrefixIcon="lock">
+                <input nz-input type="password" placeholder="Confirm Password" formControlName="checkPassword" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Name Field -->
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The input is not a valid Name">
+              <nz-input-group nzPrefixIcon="user">
+                <input nz-input placeholder="Name" formControlName="name" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Address Field -->
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The input is not a valid Address">
+              <nz-input-group nzPrefixIcon="home">
+                <input nz-input placeholder="Address" formControlName="address" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Phone Field -->
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The input is not a valid Phone">
+              <nz-input-group nzPrefixIcon="phone">
+                <input nz-input placeholder="Phone" formControlName="phone" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+  
+          <!-- Submit Button -->
+          <button nz-button class="form-button" [nzType]="'primary'">Register</button>
+          Or <a routerLink="/login">Login now!</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  

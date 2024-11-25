@@ -1,0 +1,108 @@
+// General Styling
+.bg {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #ff6b6b, #bb2929);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  // Parent Container Styling
+  .parent {
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: slideIn 0.6s ease-in-out;
+  }
+  
+  // Header Styling
+  .imgDiv h1 {
+    color: #bb2929;
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  
+  // Form Styling
+  .login-form {
+    padding: 20px;
+  
+    nz-form-item {
+      margin-bottom: 20px;
+  
+      nz-input-group {
+        input[nz-input] {
+          border-radius: 8px;
+          padding: 12px;
+          border: 1px solid #d9d9d9;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            border-color: #a62222;
+          }
+  
+          &:focus {
+            border-color: #bb2929;
+            box-shadow: 0 0 6px rgba(187, 41, 41, 0.4);
+          }
+        }
+      }
+    }
+  
+    .login-form-button {
+      width: 100%;
+      border-radius: 8px;
+      background: #bb2929;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      border: none;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background: #a62222;
+        box-shadow: 0 4px 12px rgba(186, 34, 34, 0.3);
+      }
+    }
+  
+    a {
+      color: #bb2929;
+      text-decoration: none;
+      font-weight: 600;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  // Animations
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // Responsive Styling
+  @media (max-width: 768px) {
+    .parent {
+      max-width: 90%;
+    }
+  
+    .imgDiv h1 {
+      font-size: 1.8rem;
+    }
+  }
+  
